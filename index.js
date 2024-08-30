@@ -4,13 +4,16 @@ import cors from "cors";
 import connectDB from './DbConfig/Db.js';
 import SongsRouter from './routes/songs.route.js';
 
+
+
 dotenv.config();
 
 const app = express();
 
+app.use(cors());
+
 const port = process.env.PORT || 8000
 
-app.use(cors());
 
 // Parse JSON request bodies
 app.use(express.json());
