@@ -1,0 +1,23 @@
+# version: "3.9"
+
+services:
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+
+  api:
+    build: .
+    ports:
+      - 4000:5000
+    volumes: 
+      - .:/usr/src/app
+    environment:
+      CONNECTION_URL: mongodb+srv://biruhtesfa:biruhtesfa123@cluster0.p80yi.mongodb.net/Songs?retryWrites=true&w=majority
+      PORT: 5000
+    depends_on:
+      - mongo_db
+volumes:
+  mongo_db: {}
