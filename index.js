@@ -10,10 +10,10 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({origin: 'http://localhost:5173'}));
 
 const port = process.env.PORT || 8000
 
+app.use(cors({origin: "https://info-songs.netlify.app"}));
 
 // Parse JSON request bodies
 app.use(express.json());
