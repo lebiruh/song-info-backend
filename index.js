@@ -13,9 +13,8 @@ const app = express();
 
 const port = process.env.PORT || 8000
 
-// {origin: "https://info-songs.netlify.app"}
 
-app.use(cors());
+app.use(cors({origin: "https://info-songs.netlify.app"}));
 
 // Parse JSON request bodies
 app.use(express.json());
