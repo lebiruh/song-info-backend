@@ -17,6 +17,7 @@ services:
     environment:
       - CONNECTION_URL=${CONNECTION_URL}
       - PORT=${PORT}
+      - ALLOWED_ORIGIN=${ALLOWED_ORIGIN}
     depends_on:
       - mongo_db
 volumes:
